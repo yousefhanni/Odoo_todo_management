@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!-- Form View for the Wizard -->
+        <record id="view_bulk_task_assignment_wizard_form" model="ir.ui.view">
+            <field name="name">bulk.task.assignment.wizard.form</field>
+            <field name="model">bulk.task.assignment.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Bulk Task Assignment">
+                    <group>
+                        <field name="assigned_to" string="Assign To" required="1"/>
+                    </group>
+                    <footer>
+                        <!-- Object button to call function -->
+                        <button name="action_assign_tasks" type="object" string="Assign" class="btn-primary"/>
+                        <!-- Cancel button -->
+                        <button special="cancel" string="Cancel" class="btn-secondary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action to Open the Wizard -->
+        <record id="action_bulk_task_assignment_wizard" model="ir.actions.act_window">
+            <field name="name">Bulk Task Assignment Wizard</field>
+            <field name="res_model">bulk.task.assignment.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_bulk_task_assignment_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

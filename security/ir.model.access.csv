@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_todo_task,access_todo_task,todo_management.model_todo_task,base.group_user,1,1,1,1
+access_todo_task_line,access_todo_task_line,todo_management.model_task_line,base.group_user,1,1,1,1

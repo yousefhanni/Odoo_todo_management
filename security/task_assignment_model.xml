@@ -1,0 +1,9 @@
+<odoo>
+    <data noupdate="1">
+        <record id="model_bulk_task_assignment_wizard" model="ir.model">
+            <field name="name">bulk.task.assignment.wizard</field>
+            <field name="model">bulk.task.assignment.wizard</field>
+            <field name="state">manual</field>
+        </record>
+    </data>
+</odoo>

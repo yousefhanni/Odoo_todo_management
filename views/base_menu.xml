@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+           <!-- Menu Items -->
+        <menuitem id="todo_root_menu"
+         name="To Do Task" />
+
+        
+        <menuitem id="todo_menu"  
+        name="To Do" 
+        parent="todo_root_menu" />
+    
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+<!-- Your Menu Structure Right Now:
+First Level (Root Menu):
+
+To Do Task → This is the top-level menu item (Root Menu).
+Second Level (Sub Menu):
+
+To Do → This is a submenu inside the To Do Task menu.
+The Action (Not a New Level):
+
+All Tasks is another menu item under To Do, but it is still part of the second level.
+It just triggers an action (opens the list of tasks) – it does not create a new menu level.            
+
+If You Want 3 Levels:
+You would need to create another menu item inside All Tasks or inside To Do, but right now you only have 2 levels:
+
+Level 1: To Do Task
+Level 2: To Do (and inside it, All Tasks)
+                      -->

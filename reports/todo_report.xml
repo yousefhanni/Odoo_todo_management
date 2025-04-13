@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <record id="todo_task_report" model="ir.actions.report">
+            <field name="name">ToDo Report</field>
+            <field name="model">todo.task</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="binding_model_id" ref="model_todo_task"/>
+            <field name="binding_type">report</field>
+            <field name="report_name">todo_report_template</field>  <!-- This must match the template ID -->
+        </record>
+    </data>
+</odoo>

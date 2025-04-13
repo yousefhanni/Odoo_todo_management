@@ -1,0 +1,70 @@
+<odoo>
+    <data>
+        <template id="todo_report_template">
+            <t t-call="web.external_layout">
+                <main>
+                    <div class="page">
+                        <h1 class="text-center">To Do Task Report</h1>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td><strong>TASK:</strong></td>
+                                    <td><t t-esc="doc.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Due Date:</strong></td>
+                                    <td><t t-esc="doc.deadline"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Assign To:</strong></td>
+                                    <td><t t-esc="doc.assigned_to.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Estimated Time:</strong></td>
+                                    <td><t t-esc="doc.estimated_time"/> H</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h4>Description:</h4>
+                        <p><t t-esc="doc.description"/></p>
+                        
+                        <h4>Timesheet</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Time Spent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="counter" t-value="1"/>
+                                <t t-foreach="doc.line_ids" t-as="line">
+                                    <tr>
+                                        <td><t t-esc="counter"/></td>
+                                        <td><t t-esc="line.finished_time.strftime('%d/%m/%Y') if line.finished_time else ''"/></td>
+                                        <td><t t-esc="line.description"/></td>
+                                        <td><t t-esc="line.time_spent"/> H</td>
+                                    </tr>
+                                    <t t-set="counter" t-value="counter + 1"/>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-right"><strong>Total Time</strong></td>
+                                    <td><t t-esc="doc.total_time"/> H</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        
+                        <div class="text-center">
+                            <p><strong>Company Email, Phone, Register Number</strong></p>
+                        </div>
+                    </div>
+                </main>
+            </t>
+        </template>
+    </data>
+</odoo>
